@@ -33,7 +33,7 @@ public class BodyPartFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_body_part, container, false);
-        ImageView imView = (ImageView) rootView.findViewById(R.id.body_part_fragment);
+        final ImageView imView = (ImageView) rootView.findViewById(R.id.body_part_fragment);
         if(savedInstanceState != null) {
             mListIndex = savedInstanceState.getInt(BODY_PART_LIST_INDEX);
             mImageIDs = savedInstanceState.getIntegerArrayList(BODY_PART_LIST_INDEX);
@@ -50,8 +50,10 @@ public class BodyPartFragment extends Fragment {
                     public void onClick(View v) {
                         if(mListIndex < mImageIDs.size()) {
                             mListIndex++;
+                        } else {
+                            mListIndex = 0;
                         }
-                       // v.setImageResource(mImageIDs.get(mListIndex));
+                        imView.setImageResource(mImageIDs.get(mListIndex));
                     }
                 }
 
