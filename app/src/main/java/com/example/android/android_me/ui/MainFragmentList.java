@@ -31,7 +31,7 @@ public class MainFragmentList extends Fragment{
         try {
             mCallback = (OnImageClickListener) context;
         } catch (ClassCastException e) {
-            throw new ClassCastException(context.toString()
+            throw new ClassCastException(context.toString()+
                              " must implement OnImageClickListener");
         }
     }
@@ -43,7 +43,7 @@ public class MainFragmentList extends Fragment{
         MasterListAdapter mAdapter = new MasterListAdapter(getActivity().getApplicationContext(),
                                                             AndroidImageAssets.getAll());
         mGView.setAdapter(mAdapter);
-        mGView.setOnClickListener(new OnItemClickListener() {
+        mGView.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 mCallback.onImageSelected(position);

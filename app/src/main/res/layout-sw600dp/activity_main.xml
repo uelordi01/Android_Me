@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/two_pane_layout"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<fragment
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/master_list_fragment"
+    android:name="com.example.android.android_me.ui.MainFragmentList"
+    android:layout_width="400dp"
+    android:layout_height="match_parent"
+    tools:layout="@layout/fragment_master_list" />
+<View style="@style/Divider" />
+<fragment
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/body_part_fragment"
+    android:name="com.example.android.android_me.ui.BodyPartFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:layout="@layout/fragment_body_part" />
+</LinearLayout>

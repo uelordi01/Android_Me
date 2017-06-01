@@ -43,7 +43,6 @@ public class BodyPartFragment extends Fragment {
         } else {
             Log.v(TAG, "this fragment has null list of images" );
         }
-        imView.setImageResource(AndroidImageAssets.getBodies().get(0));
         imView.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
